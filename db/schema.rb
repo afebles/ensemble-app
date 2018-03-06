@@ -10,10 +10,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305135629) do
+ActiveRecord::Schema.define(version: 20180305165814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_comments_on_project_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "connections", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "second_user_id"
+    t.index ["second_user_id"], name: "index_connections_on_second_user_id"
+    t.index ["user_id"], name: "index_connections_on_user_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_participants_on_project_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "picture"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "level_id"
+    t.bigint "genre_id"
+    t.bigint "instrument_id"
+    t.index ["genre_id"], name: "index_skills_on_genre_id"
+    t.index ["instrument_id"], name: "index_skills_on_instrument_id"
+    t.index ["level_id"], name: "index_skills_on_level_id"
+    t.index ["user_id"], name: "index_skills_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +100,28 @@ ActiveRecord::Schema.define(version: 20180305135629) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.string "city"
+    t.string "country"
+    t.string "about"
+    t.boolean "pro"
+    t.string "avatar"
+    t.string "media"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "projects"
+  add_foreign_key "comments", "users"
+  add_foreign_key "connections", "users"
+  add_foreign_key "connections", "users", column: "second_user_id"
+  add_foreign_key "participants", "projects"
+  add_foreign_key "participants", "users"
+  add_foreign_key "projects", "users"
+  add_foreign_key "skills", "genres"
+  add_foreign_key "skills", "instruments"
+  add_foreign_key "skills", "levels"
+  add_foreign_key "skills", "users"
 end
