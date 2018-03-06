@@ -9,15 +9,15 @@ class MusiciansController < ApplicationController
       @musicians = User.all
     end
 
-    @musicians = User.where.not(latitude: nil, longitude: nil)
+    # @musicians = User.where.not(latitude: nil, longitude: nil)
 
-    @markers = @musicians.map do |musician|
-      {
-        lat: musician.latitude,
-        lng: musician.longitude,
-        infoWindow: { content: render_to_string(partial: "/musicians/map_box", locals: { musician: musician }) }
-      }
-    end
+    # @markers = @musicians.map do |musician|
+    #   {
+    #     lat: musician.latitude,
+    #     lng: musician.longitude,
+    #     infoWindow: { content: render_to_string(partial: "/musicians/map_box", locals: { musician: musician }) }
+    #   }
+    # end
 
   end
 
