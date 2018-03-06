@@ -18,6 +18,7 @@ class MusiciansController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/musicians/map_box", locals: { musician: musician }) }
       }
     end
+
   end
 
   def show
