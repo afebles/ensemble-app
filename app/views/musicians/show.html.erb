@@ -1,1 +1,18 @@
 <h1>HELLO</h1>
+
+<!-- btn connect -->
+<% if  @musician.friends_with?(current_user) %>
+  <p>You are already connected!</p>
+  <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+<%elsif @musician.pending_friends.include?(current_user)%>
+  <p>You are pending connection!</p>
+   <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+<%else%>
+<p><%= link_to "Connect", connect_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+<%end%>
+<!-- btn block use only works if firends -->
+<% if  @musician.friends_with?(current_user) %>
+  <p><%= link_to "BLOCK", block_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+<% elsif  current_user.blocked_friends.include?(@musician) %>
+  <p><%= link_to "UNBLOCK", unblock_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+<%end%>

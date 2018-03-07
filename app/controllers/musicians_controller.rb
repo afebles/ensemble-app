@@ -21,6 +21,30 @@ class MusiciansController < ApplicationController
 
   end
 
+  def connect
+    @musician = User.find(params[:id])
+    @musician.friend_request(current_user)
+    redirect_to musician_path(@musician)
+  end
+
+  def remove
+    @musician = User.find(params[:id])
+    @musician.remove_friend(current_user)
+    redirect_to musician_path(@musician)
+  end
+
+  def block
+    @musician = User.find(params[:id])
+    current_user.block_friend(@musician)
+    redirect_to musician_path(@musician)
+  end
+
+   def unblock
+    @musician = User.find(params[:id])
+    @musician.unblock_friend(current_user)
+    redirect_to musician_path(@musician)
+  end
+
   def show
     @musician = User.find(params[:id])
   end
