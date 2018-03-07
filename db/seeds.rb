@@ -8,7 +8,7 @@
 
 require 'faker'
 # User.where(email: "test-test@test.com").destroy_all
-
+User.destroy_all
 # user = User.create!(email: "test-test@test.com", password: "password")
 
 puts 'Creating 5 fake users...'
@@ -22,10 +22,11 @@ puts 'Creating 5 fake users...'
     city: Faker::Address.city,
     country: Faker::Address.country,
     about: Faker::Overwatch.quote,
-    avatar: Faker::Avatar.image("my-own-slug", "50x50"),
     media: Faker::LoremPixel.image,
-    banner: Faker::LoremPixel.image
   )
+  user.remote_avatar_url = Faker::Avatar.image("my-own-slug", "50x50")
+  user.remote_banner_url = Faker::Avatar.image("my-own-slug", "50x50")
+
 
   user.save!
 end
