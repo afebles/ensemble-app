@@ -31,7 +31,7 @@
       <%= link_to "Delete", project_path(@project), class: "btn btn-primary btn-lg", method: :delete,
         data: { confirm: "Are you sure?" } %></p>
       <% else %>
-        <p><%= link_to "Book Now", new_project_booking_path(@project) , class: "btn btn-primary btn-lg" %></p>
+        <p><%= link_to "Comment", project_path(@project) , class: "btn btn-primary btn-lg" %></p>
 
       <% end %>
       <p><%= link_to "Back to projects", projects_path %></p>
