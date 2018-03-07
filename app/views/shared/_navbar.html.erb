@@ -4,6 +4,13 @@
     <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
+<!--I've commented the "unless" statement beacuse I wasted the search bar to be everywhere for now (Aron) -->
+
+<div>
+  <%= render 'shared/search_bar' %>
+  <!--unless url_for == root_path -->
+</div>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 

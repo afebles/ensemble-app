@@ -3,7 +3,7 @@ class MusiciansController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "title ILIKE :query OR location ILIKE :query"
+      sql_query = "city ILIKE :query"
       @musicians = User.where(sql_query, query: "%#{params[:query]}%")
     else
       @musicians = User.all
