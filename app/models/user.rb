@@ -18,4 +18,7 @@ class User < ApplicationRecord
   # validates :last_name, presence: true
   # validates :birth_date, presence: true
 
+  has_friendship
+
+
 end
