@@ -6,16 +6,36 @@ User.destroy_all
 
 users = [
   {
-    email: "christel@me.com"
-    password:"123456"
-    first_name: "Christel"
-    last_name: "Heijmans"
-    avatar:"https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/14317373_1118333798261574_7280857368832622381_n.jpg?oh=a4746fbb0c2882f65c34fce25528f5a1&oe=5B0B459D"
-    banner: nil
-    city: Amsterdam
-    country: Netherlands
-    about: nil
-    media: nil
+    email: "christel@me.com",
+    password: "123456",
+    first_name: "Christel",
+    last_name: "Heijmans",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/14317373_1118333798261574_7280857368832622381_n.jpg?oh=a4746fbb0c2882f65c34fce25528f5a1&oe=5B0B459D",
+    remote_banner_url: "https://unsplash.com/photos/LhWr3yGGC6k",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Voice",
+    genre: "Jazz/Soul",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "kim@me.com",
+    password: "123456",
+    first_name: "Kim",
+    last_name: "Vera",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/10500419_10204198754355164_4259443441310520678_n.jpg?oh=0d248165e00452fdce86b74c00f238d0&oe=5B0B3393",
+    remote_banner_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/988611_10201566031098728_751955673_n.jpg?oh=f6f80f47c882d91fd2a9d05a1138cc43&oe=5B38A8BD",
+    city: "Madrid",
+    country: "Spain",
+    level: "Advance",
+    instrument: "Guitar",
+    genre: "Rumba",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
     }
 ]
 
@@ -50,10 +70,12 @@ users.each { |user| User.create(user) }
 #     t.string "avatar"
 #     t.string "media"
 #     t.string "banner"
+#     t.string "level"
+#     t.string "instrument"
+#     t.date "genre"
 #     t.index ["email"], name: "index_users_on_email", unique: true
 #     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 #   end
-
 
 
 
