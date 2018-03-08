@@ -16,3 +16,9 @@
 <% elsif  current_user.blocked_friends.include?(@musician) %>
   <p><%= link_to "UNBLOCK", unblock_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
 <%end%>
+
+<% @pending_friends.each do |friend| %>
+<p><%= @musician.first_name %></p>
+<p><%= link_to "Accept connection", accept_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+<%end%>
+

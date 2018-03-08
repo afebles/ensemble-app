@@ -47,9 +47,14 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = User.find(params[:id])
+    @pending_friends = @musician.pending_friends
   end
-
-
+# should move to dashboard profile
+def accept
+    @musician = User.find(params[:id])
+    current_user.accept_request(@musician)
+    redirect_to musician_path(@musician)
+end
 
  # almu coded: new and create
  def new
