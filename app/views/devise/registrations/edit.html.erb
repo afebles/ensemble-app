@@ -23,11 +23,15 @@
         <%= f.input :city %>
         <%= f.input :country %>
 
-        <%= f.input :about %>
+        <%= f.input :about, as: :text %>
+
 
 
         <%= f.input :avatar %>
         <%= f.input :avatar_cache, as: :hidden %>
+
+        <%= f.input :banner %>
+        <%= f.input :banner_cache, as: :hidden %>
         <%#= f.select :instrument, options_for_select(%w[Mike Nick Jason Tim]) %>
         <%#= f.input :instrument, :collection => %w[Mike Nick Jason Tim] %>
 
@@ -36,7 +40,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign Up" %>
+        <%= f.button :submit, "Save" %>
       </div>
       <% end %>
 
