@@ -1,14 +1,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo_nsemble_editable.png", height: 50 %>
   <% end %>
 
 <!--I've commented the "unless" statement beacuse I wasted the search bar to be everywhere for now (Aron) -->
 
 <div>
-  <%= render 'shared/search_bar' %>
-  <!--unless url_for == root_path -->
+  <%= render 'shared/search_bar' unless url_for == root_path %>
 </div>
 
   <!-- Right Navigation -->
@@ -18,6 +17,16 @@
 
 
       <!-- Links when logged in -->
+      <%#= link_to "Make a plan", new_plan_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%#= link_to "My plans", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+
+
+
       <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
