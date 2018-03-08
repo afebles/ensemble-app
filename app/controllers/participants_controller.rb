@@ -1,13 +1,19 @@
 class ParticipantsController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def index
+    @participants = Participant.all
+  end
+
   def create
-    @participant = Participant.new(participant_params)
+    @project = Project.find(params[:project_id])
+    @participant = Participant.new
     @participant.user = current_user
+    @participant.project = @project
     if @participant.save
-      redirect_to participant_path(@participant)
+      redirect_to project_path(@project)
     else
-      render :new
+      redirect_to project_path(@project)
     end
   end
 
@@ -35,7 +41,7 @@ class ParticipantsController < ApplicationController
   # private
 
   # def participant_params
-  #   params.require(:participant).permit(:title, :description, :location, :start_time, :end_time, :picture)
+  #   params.require(:participant).permit()
   # end
 
 end

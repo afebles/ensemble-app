@@ -43,7 +43,7 @@
       <%= link_to "Delete", project_path(@project), class: "btn btn-primary btn-lg", method: :delete,
         data: { confirm: "Are you sure?" } %></p>
       <% else %>
-        <p><%= link_to "Join the project", project_path(@project) , class: "btn btn-primary btn-lg" %></p>
+        <p><%= link_to "Join the project", project_participants_path(@project) , method: :post, class: "btn btn-primary btn-lg" %></p>
       <% end %>
 
       <p><%= link_to "New Comment", "#" %></p>
@@ -53,6 +53,7 @@
 
     </div>
   </div>
+
 
 
 
