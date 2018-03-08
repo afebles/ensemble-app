@@ -1,1 +1,59 @@
-<h1>HELLO</h1>
+
+<!-- Header with Background Image -->
+<div class="banner banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
+  <%#= @musician[:banner] %>
+</div>
+
+
+
+
+<!-- Page Content -->
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+
+      <div class="avatar-profile" >
+        <%= cl_image_tag(@musician.avatar) %>
+        <h3><%= @musician[:first_name].capitalize %> <%= @musician[:last_name].capitalize %></h3>
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          <li> <%= @musician[:city] %></li>
+          <li> <%= @musician[:country] %></li>
+        </ul>
+
+      </div>
+      <div class="col-sm-8">
+        <div class= "about">
+          <h4 class="mt-4">About me:</h4>
+          <p><%= @musician[:about] %></p>
+        </div>
+        <div class= "skills">
+          <ul>
+            <li> <%= @musician[:instrument] %></li>
+            <li> <%= @musician[:level] %></li>
+            <li> <%= @musician[:genre] %></li>
+          </ul>
+        </div>
+        <div class= "media">
+          <h4 class="mt-4">Media:</h4>
+          <p><%= @musician[:media] %></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
