@@ -1,8 +1,14 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo_nsemble_editable.png", height: 50 %>
   <% end %>
+
+<!--I've commented the "unless" statement beacuse I wasted the search bar to be everywhere for now (Aron) -->
+
+<div>
+  <%= render 'shared/search_bar' unless url_for == root_path %>
+</div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -11,14 +17,24 @@
 
 
       <!-- Links when logged in -->
+      <%#= link_to "Make a plan", new_plan_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%#= link_to "My plans", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+
+
+
       <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Create a project", new_project_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Connection requests: #{current_user.pending_friends.length}", connections_path, class: "navbar-wagon-item navbar-wagon-link"%>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag (current_user.avatar || "http://kitt.lewagon.com/placeholder/users/ssaunier"), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
