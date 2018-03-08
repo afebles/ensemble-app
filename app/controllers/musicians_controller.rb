@@ -21,11 +21,40 @@ class MusiciansController < ApplicationController
 
   end
 
-  def show
+  def connect
     @musician = User.find(params[:id])
+    @musician.friend_request(current_user)
+    redirect_to musician_path(@musician)
   end
 
+  def remove
+    @musician = User.find(params[:id])
+    @musician.remove_friend(current_user)
+    redirect_to musician_path(@musician)
+  end
 
+  def block
+    @musician = User.find(params[:id])
+    current_user.block_friend(@musician)
+    redirect_to musician_path(@musician)
+  end
+
+   def unblock
+    @musician = User.find(params[:id])
+    @musician.unblock_friend(current_user)
+    redirect_to musician_path(@musician)
+  end
+
+  def show
+    @musician = User.find(params[:id])
+    @pending_friends = @musician.pending_friends
+  end
+# should move to dashboard profile
+def accept
+    @musician = User.find(params[:id])
+    current_user.accept_request(@musician)
+    redirect_to musician_path(@musician)
+end
 
  # almu coded: new and create
  def new
