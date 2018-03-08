@@ -7,6 +7,7 @@ class MusiciansController < ApplicationController
       @musicians = User.where(sql_query, query: "%#{params[:query]}%")
     else
       @musicians = User.all
+      @projects = Project.all
     end
 
     # @musicians = User.where.not(latitude: nil, longitude: nil)
