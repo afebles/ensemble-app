@@ -2,16 +2,20 @@
 
 
 <ul>
-      <li><%= @musician[:first_name] %><%= @musician[:last_name] %></li>
-      <li> <%= @musician[:about] %></li>
-      <li> <%= @musician[:media] %></li>
-      <li> <%= @musician[:city] %></li>
-      <li> <%= @musician[:country] %></li>
-      <li> <%= @musician[:genre] %></li>
-      <li> <%= @musician[:instrument] %></li>
-      <li> <%= @musician[:level] %></li>
-      <li> <%= @musician[:avatar] %></li>
-      <li> <%= @musician[:banner] %></li>
-      <!-- <li><%= cl_image_path(@musician.avatar) %></li> -->
+      <li><%= @musician.first_name %><%= @musician.last_name %></li>
+      <li> <%= @musician.about %></li>
+      <li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @musician[:media].split("/").last %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </li>
+      <li> <%= @musician.city %></li>
+      <li> <%= @musician.country %></li>
+      <li> <%= @musician.genre %></li>
+      <li> <%= @musician.instrument %></li>
+      <li> <%= @musician.level %></li>
+      <li> <%= cl_image_tag(@musician.banner) %></li>
+      <li><%= cl_image_tag(@musician.avatar) %></li>
 
     </ul>
+
+
+<%= link_to "Create a project", new_project_path, class: "navbar-wagon-item navbar-wagon-link" %>
