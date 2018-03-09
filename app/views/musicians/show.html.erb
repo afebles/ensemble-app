@@ -38,10 +38,11 @@
     </div>
     <div class= "media">
       <h4 class="mt-4">Media:</h4>
+      <% if @musician.media %>
       <p><%= @musician.media %></p>
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @musician[:media].split("/").last %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+<% end %>
     </div>
     <br>
     <div>
