@@ -59,7 +59,7 @@ class MusiciansController < ApplicationController
 # should move to dashboard profile
 def accept
     @musician = User.find(params[:id])
-    current_user.accept_request(@musician)
+    @musician.accept_request(current_user)
     redirect_to connections_path
 end
 
