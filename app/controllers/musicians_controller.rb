@@ -1,5 +1,5 @@
 class MusiciansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     if params[:location].present?
@@ -56,9 +56,9 @@ class MusiciansController < ApplicationController
   end
 # should move to dashboard profile
 def accept
-    @musician = User.find(params[:id])
-    current_user.accept_request(@musician)
-    redirect_to musician_path(@musician)
+  @musician = User.find(params[:id])
+  @musician.accept_request(current_user)
+  redirect_to musician_path(@musician)
 end
 
  # almu coded: new and create
