@@ -3,17 +3,21 @@ class MusiciansController < ApplicationController
 
   def index
     if params[:location].present?
-      sql_query = "city ILIKE '#{params[:location]}'"
+      sql_query = "city ILIKE :location"
+      sql_query_2 = "location ILIKE :location"
+
+
       #@instrument = Instrument.where(name: params[:skill])
 
       #@skill = Skill.where(instrument: @instrument)
-      @musicians = User.where(sql_query)
-
+      @musicians = User.where(sql_query, location: "%#{params[:location]}%")
+      @projects = Project.where(sql_query_2, location: "%#{params[:location]}%")
     else
       @musicians = User.all
       @projects = Project.all
     end
 
+  end
     # @musicians = User.where.not(latitude: nil, longitude: nil)
 
     # @markers = @musicians.map do |musician|
@@ -23,8 +27,6 @@ class MusiciansController < ApplicationController
     #     infoWindow: { content: render_to_string(partial: "/musicians/map_box", locals: { musician: musician }) }
     #   }
     # end
-
-  end
 
   def connect
     @musician = User.find(params[:id])
@@ -133,3 +135,4 @@ end
   end
 
 end
+
