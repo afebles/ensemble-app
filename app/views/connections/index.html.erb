@@ -15,10 +15,10 @@
 
       <% @pending_connections.each do |pending_connection|%>
       <p><%= pending_connection.first_name %> <%= pending_connection.last_name %></p>
+      <p><%= pending_connection.first_name %></p>
       <p><%= link_to "Accept connection", accept_musician_path(pending_connection) , class: "btn btn-primary btn-lg" %></p>
       <% end %>
 
     </div>
   </div>
 </div>
-
