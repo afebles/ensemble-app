@@ -30,16 +30,17 @@
           <li ><%= cl_image_tag @project.user.avatar, width: 100, height: 100, crop: :fill , class: "participant"  %></li>
           <% end %>
         </ul>
+        <% @participants.each do |participant| %>
         <ul class="no-deco">
-          <%= link_to musician_path(@project.user) do  %>
+          <%= link_to musician_path(participant.user) do  %>
           <li >
             <div>
-              <%= cl_image_tag @participants[0].user.avatar, width: 100, height: 100, crop: :fill , class: "participant" %>
+              <%= cl_image_tag participant.user.avatar, width: 100, height: 100, crop: :fill , class: "participant" %>
             </div>
           </li>
           <% end %>
         </ul>
-
+      <% end %>
 
       </div>
       <div class="col-sm-8">
