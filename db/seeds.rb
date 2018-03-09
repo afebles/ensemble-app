@@ -27,14 +27,144 @@ Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een rep
     first_name: "Kim",
     last_name: "Vera",
     remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/10500419_10204198754355164_4259443441310520678_n.jpg?oh=0d248165e00452fdce86b74c00f238d0&oe=5B0B3393",
-    remote_banner_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/988611_10201566031098728_751955673_n.jpg?oh=f6f80f47c882d91fd2a9d05a1138cc43&oe=5B38A8BD",
-    city: "Madrid",
-    country: "Spain",
+    remote_banner_url: "https://previews.123rf.com/images/belchonock/belchonock1509/belchonock150902686/45177248-musical-instruments-on-turquoise-wallpaper-background.jpg",
+    city: "Diemen",
+    country: "Netherlands",
     level: "Advance",
     instrument: "Guitar",
     genre: "Rumba",
     about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
     Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "jimi@me.com",
+    password: "123456",
+    first_name: "Jimi",
+    last_name: "Yolo",
+    remote_avatar_url: "https://img-s3.onedio.com/id-57725837d9c145dc39c50719/rev-0/raw/s-dc55c5df4464d8e776d3551354bf9f1d9005dbd6.jpg",
+    remote_banner_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/988611_10201566031098728_751955673_n.jpg?oh=f6f80f47c882d91fd2a9d05a1138cc43&oe=5B38A8BD",
+    city: "Diemen",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Drums",
+    genre: "Rock",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "lee@me.com",
+    password: "123456",
+    first_name: "Lee",
+    last_name: "Wiss",
+    remote_avatar_url: "https://s.hdnux.com/photos/63/04/30/13387264/3/920x920.jpg",
+    remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3VmxVT7_7YIITVRXaZPVzib73eb1xIvXR2o8yYwjqOKnRO5i0",
+    city: "Diemen",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Trumpet",
+    genre: "Jazz",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "willy@me.com",
+    password: "123456",
+    first_name: "Willy",
+    last_name: "Free",
+    remote_avatar_url: "https://qph.fs.quoracdn.net/main-qimg-4c62a423e253ac05456ffb84822760f2-c",
+    remote_banner_url: "https://pre00.deviantart.net/90f9/th/pre/f/2017/018/0/f/random_background_4_by_9xrenex9-davutvj.png",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Guitar",
+    genre: "Blues",
+    about: "Curiosity caused me pain. T'was the dawn creation of the underworld. All I know is that I gotta keep her in my arms. Hallelujah, Hallelujah, Hallelujah, Hallelujah. That's where I first saw the girl. I don't know. There she goes. Well I heard there was a secret chord. The dawning of the underworld.. ",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "corey@me.com",
+    password: "123456",
+    first_name: "Corey",
+    last_name: "Appel",
+    remote_avatar_url: "http://gaia.adage.com/images/bin/image/jumbo/IvanCashBioPic.jpeg",
+    remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Sjx8CQLEpivQY_-oV9cpek60anPTttHaeRlZ-D_QSTYT9yz9zA",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Piano",
+    genre: "Blues",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "luis@me.com",
+    password: "123456",
+    first_name: "Luis",
+    last_name: "Clark",
+    remote_avatar_url: "https://pbs.twimg.com/media/BcINeMVCIAABeWd.jpg",
+    remote_banner_url: "https://static3.scirra.net/images/newstore/products/2067/Screenshot-2.png",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Percusion",
+    genre: "Rumba",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "amy@me.com",
+    password: "123456",
+    first_name: "Amy",
+    last_name: "Fullhouse",
+    remote_avatar_url: "http://theludicrous.info/wp-content/uploads/2015/10/Illustrator.jpg",
+    remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyEpf7W2vR-4XseXxEdpKQX0Ly_6XVA2t_HeBaYSOUS2Ju5QQzcw",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Drums",
+    genre: "Who killed me with her kiss. Well it goes like this the fourth the fifth. Is to get to know you better. Let the truth cut through. How that girl. At first I didn't
+    catch your name. Features carved with colors raining all about.
+    Open my eyes for the mystery of me and you. How we chased a million stars. With your timid little eyes.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "angel@me.com",
+    password: "123456",
+    first_name: "Angel",
+    last_name: "Jolly",
+    remote_avatar_url: "https://www.rd.com/wp-content/uploads/2017/03/02-People-Share-the-Random-Act-of-Kindness-That-Changed-Their-Life-Fatima-M-Woods-380x254.jpg",
+    remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpCOzXFFp5VF6l8B4hj46J8RxZn_zOm3-XbPrfpFaGhyMQkFM1",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Flute",
+    genre: "Beatbox",
+    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "eve@me.com",
+    password: "123456",
+    first_name: "Eve",
+    last_name: "Ning",
+    remote_avatar_url: "https://as01.epimg.net/buenavida/imagenes/2017/01/16/portada/1484585722_275704_1484605067_noticia_normal.jpg",
+    remote_banner_url: "https://orig00.deviantart.net/2106/f/2012/329/0/e/untitled_drawing_by_walktheinch-d5m49xe.png",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Guitar",
+    genre: "Cucumba",
+    about: "Poop in litter box, scratch the walls purr for no reason for purrr purr littel cat, little cat purr purr but dream about hunting birds. Chirp at birds burrow
+    under covers sit in box so lick butt, so find something else more interesting. Find a way to fit in tiny box sniff other cat's butt and hang jaw half open thereafter
+    or give attitude lick the plastic bag. Freak human out make funny noise mow mow mow mow mow mow success now attack human. Woops poop hanging from butt must get rid run
+    run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now have a lot of grump in yourself because you can't
+     forget to be grumpy and not be like king grumpy cat or eat half my food and ask for more",
     media: "https://youtu.be/ObGlgJPCZj4"
     }
 ]
