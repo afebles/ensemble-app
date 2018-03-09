@@ -1,12 +1,17 @@
 class MusiciansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    if params[:query].present?
-      sql_query = "city ILIKE :query"
-      @musicians = User.where(sql_query, query: "%#{params[:query]}%")
+    if params[:location].present?
+      sql_query = "city ILIKE '#{params[:location]}'"
+      #@instrument = Instrument.where(name: params[:skill])
+
+      #@skill = Skill.where(instrument: @instrument)
+      @musicians = User.where(sql_query)
+
     else
       @musicians = User.all
+      @projects = Project.all
     end
 
     # @musicians = User.where.not(latitude: nil, longitude: nil)
@@ -21,11 +26,40 @@ class MusiciansController < ApplicationController
 
   end
 
-  def show
+  def connect
     @musician = User.find(params[:id])
+    @musician.friend_request(current_user)
+    redirect_to musician_path(@musician)
   end
 
+  def remove
+    @musician = User.find(params[:id])
+    @musician.remove_friend(current_user)
+    redirect_to musician_path(@musician)
+  end
 
+  def block
+    @musician = User.find(params[:id])
+    current_user.block_friend(@musician)
+    redirect_to musician_path(@musician)
+  end
+
+   def unblock
+    @musician = User.find(params[:id])
+    @musician.unblock_friend(current_user)
+    redirect_to musician_path(@musician)
+  end
+
+  def show
+    @musician = User.find(params[:id])
+    @pending_friends = @musician.pending_friends
+  end
+# should move to dashboard profile
+def accept
+  @musician = User.find(params[:id])
+  @musician.accept_request(current_user)
+  redirect_to musician_path(@musician)
+end
 
  # almu coded: new and create
  def new
