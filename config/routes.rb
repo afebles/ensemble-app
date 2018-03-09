@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 
 resources :projects do
     resources :comments
+    resources :participants, only: [:create, :destroy]
   end
 end

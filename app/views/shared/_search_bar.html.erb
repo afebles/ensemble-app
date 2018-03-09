@@ -1,8 +1,13 @@
 <%= form_tag musicians_path, method: :get, class: "form-inline" do%>
-  <%= text_field_tag :query,
+  <%#= text_field_tag :skill,
     params[:query],
     class: "form-control form-control-lg",
-      placeholder: "Search"
+      placeholder: "What? ex: Drummer, Project..."
       %>
-  <%= submit_tag "Find a project", class: "btn btn-primary" %>
+  <%= text_field_tag :location,
+    params[:query],
+    class: "form-control form-control-lg",
+      placeholder: "Where? ex: Amsterdam"
+      %>
+  <%= submit_tag "Find", class: "btn btn-primary" %>
 <% end %>

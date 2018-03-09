@@ -1,35 +1,107 @@
-<h1>HELLO</h1>
+
+<!-- Header with Background Image -->
+
+<div class="banner banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
+  <%#= @musician[:banner] %>
+  <%= cl_image_tag @musician.avatar, height: 200, width: 200,  radius: 0 %>
+</div>
 
 
-<!-- btn connect -->
-<% if  @musician.friends_with?(current_user) %>
-  <p>You are already connected!</p>
-  <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-<%elsif @musician.pending_friends.include?(current_user)%>
-  <p>You are pending connection!</p>
-   <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-<%else%>
-<p><%= link_to "Connect", connect_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-<%end%>
-<!-- btn block use only works if firends -->
-<% if  @musician.friends_with?(current_user) %>
-  <p><%= link_to "BLOCK", block_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-<% elsif  current_user.blocked_friends.include?(@musician) %>
-  <p><%= link_to "UNBLOCK", unblock_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-<%end%>
 
 
-<ul>
-      <li><%= @musician[:first_name] %><%= @musician[:last_name] %></li>
-      <li> <%= @musician[:about] %></li>
-      <li> <%= @musician[:media] %></li>
-      <li> <%= @musician[:city] %></li>
-      <li> <%= @musician[:country] %></li>
-      <li> <%= @musician[:genre] %></li>
-      <li> <%= @musician[:instrument] %></li>
-      <li> <%= @musician[:level] %></li>
-      <li> <%= @musician[:avatar] %></li>
-      <li> <%= @musician[:banner] %></li>
 
-    </ul>
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+
+    <div class="full-name" >
+
+     <h2><%= @musician.first_name.capitalize %> <%= @musician.last_name.capitalize %></h2>
+   </div>
+
+   <div class="col-sm-4">
+    <h4> <%= @musician.city %>, <%= @musician.country %></h4>
+  </div>
+
+
+  <div class="col-sm-7">
+    <div class= "about">
+      <h2 class="mt-4">About me:</h2>
+      <p><%= @musician.about %></p>
+    </div>
+    <div class= "skills">
+      <ul>
+        <li> <%= @musician.instrument %></li>
+        <li> <%= @musician.level %></li>
+        <li> <%= @musician.genre %></li>
+      </ul>
+    </div>
+    <div class= "media">
+      <h4 class="mt-4">Media:</h4>
+      <p><%= @musician.media %></p>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @musician[:media].split("/").last %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    </div>
+    <br>
+    <div>
+      <%= link_to "Create a project", new_project_path, class: "btn btn-primary btn-lg" %>
+    </div>
+    <br>
+
+
+
+
+    <!-- btn connect -->
+    <div class="conecting">
+      <% if  @musician.friends_with?(current_user) %>
+      <p>You are already connected!</p>
+      <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+      <%elsif @musician.pending_friends.include?(current_user)%>
+      <p>You are pending connection!</p>
+      <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+      <%else%>
+      <p><%= link_to "Connect", connect_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+      <%end%>
+      <!-- btn block use only works if firends -->
+      <% if  @musician.friends_with?(current_user) %>
+      <p><%= link_to "BLOCK", block_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+      <% elsif  current_user.blocked_friends.include?(@musician) %>
+      <p><%= link_to "UNBLOCK", unblock_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+      <%end%>
+
+      <% @pending_friends.each do |friend| %>
+      <p><%= @musician.first_name %></p>
+      <p><%= link_to "Accept connection", accept_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
+      <%end%>
+
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

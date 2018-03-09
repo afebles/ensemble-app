@@ -1,12 +1,17 @@
 class MusiciansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    if params[:query].present?
-      sql_query = "city ILIKE :query"
-      @musicians = User.where(sql_query, query: "%#{params[:query]}%")
+    if params[:location].present?
+      sql_query = "city ILIKE '#{params[:location]}'"
+      #@instrument = Instrument.where(name: params[:skill])
+
+      #@skill = Skill.where(instrument: @instrument)
+      @musicians = User.where(sql_query)
+
     else
       @musicians = User.all
+      @projects = Project.all
     end
 
     # @musicians = User.where.not(latitude: nil, longitude: nil)
@@ -51,11 +56,9 @@ class MusiciansController < ApplicationController
   end
 # should move to dashboard profile
 def accept
-
     @musician = User.find(params[:id])
     current_user.accept_request(@musician)
     redirect_to connections_path
-
 end
 
  # almu coded: new and create
