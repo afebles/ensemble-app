@@ -48,6 +48,8 @@
 }
 .card-link:hover {
   opacity: 0.1;
+  transition: 1s !important;
+  transition-delay: 1s !important;
 }
 
 .mini-preview-anchor {
@@ -71,14 +73,13 @@
 
 .mini-preview-anchor:hover {
   opacity: 1 !important;
-
 }
 
 .mini-preview-anchor:hover .mini-preview-wrapper {
     z-index: 2 !important;
     opacity: 1 !important;
     margin-top: 6px;
-    transition: opacity .3ss, margin-top .3s;
+    transition: opacity .3s, margin-top .3s;
 
 }
 
@@ -101,7 +102,7 @@
 }
 
 .mini-preview-loading::before {
-    content: 'Loading...';
+    content: 'Just a second...';
     display: table-cell;
     text-align: center;
     vertical-align: middle;
