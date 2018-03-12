@@ -25,10 +25,28 @@
 
           <%= link_to "Edit profile", edit_user_registration_path(@user) %>
           <%= link_to "Delete", user_registration_path(@user), class: "btn btn-primary btn-lg", method: :delete, data: { confirm: "Are you sure?" } %>
-
         </p>
       <% end %>
     </div>
+      <div>
+      </ul>
+      <h3>Your connections..... (quiero ver las fotos)</h3>
+        <% @connections.each do |connection| %>
+        <ul class="no-deco">
+
+          <%= link_to musician_path(connection) do  %>
+          <li >
+            <div>
+              <%= cl_image_tag connection.avatar, width: 50, height: 50, crop: :fill , class: "participant" %>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+
+        <% end %>
+
+    </div>
+
 
 
 
