@@ -1,67 +1,118 @@
 
-<!-- Header with Background Image -->
-<div>
-  <div class="banner banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
-    <%#= @musician[:banner] %>
+
+<div class="profile-container">
+
+  <div class="profile-content">
+    <div class="banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
+    </div>
+    <div class="photo-name" >
     <%= cl_image_tag @musician.avatar, height: 200, width: 200,  crop: :thumb,  class: "avatar-profile" %>
-  </div>
+
+      <h2><%= @musician.first_name.capitalize %> <%= @musician.last_name.capitalize %></h2>
+
+
+          <p> Instrument <strong class= "skills"><%= @musician.instrument %></strong>
+            Level<strong class= "skills"><%= @musician.level %></strong>
+            Genre<strong class= "skills"><%= @musician.genre %></strong>
+          </p>
+
+    </div>
+
+    <div class="container">
+      <div class="col-sm-4">
+        <h4> <%= @musician.city %>, <%= @musician.country %></h4>
+        <% if current_user == @musician %>
+          <p>
+            <%= link_to "Edit profile  ", edit_user_registration_path(@user) %><i class="fa fa-edit"></i>
+
+
+            <br>
+            <%= link_to "Delete profile  ", user_registration_path(@user), class: "", method: :delete, data: { confirm: "Are you sure?" } %> <i class="fa fa-trash"></i>
+          </p>
+        <% end %>
+        <div>
+        <h3>Friends</h3>
+        <div class= "friends-avatars">
+
+          <% @connections.each do |connection| %>
+            <%= link_to musician_path(connection) do  %>
+              <%= cl_image_tag connection.avatar, width: 50, height: 50, crop: :fill , class: "participant" %>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+    </div>
+
 
 </div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Page Content -->
 <div class="container">
-  <div class="row">
 
-    <div class="full-name" >
-      <h2><%= @musician.first_name.capitalize %> <%= @musician.last_name.capitalize %></h2>
-    </div>
 
-    <div class="col-sm-4">
-      <h4> <%= @musician.city %>, <%= @musician.country %></h4>
-      <% if current_user == @musician %>
-        <p>
 
-          <%= link_to "Edit profile", edit_user_registration_path(@user) %>
-          <%= link_to "Delete", user_registration_path(@user), class: "btn btn-primary btn-lg", method: :delete, data: { confirm: "Are you sure?" } %>
-        </p>
-      <% end %>
-    </div>
-      <div>
-      </ul>
-      <h3>Your connections..... (quiero ver las fotos)</h3>
-        <% @connections.each do |connection| %>
-        <ul class="no-deco">
-
-          <%= link_to musician_path(connection) do  %>
-          <li >
-            <div>
-              <%= cl_image_tag connection.avatar, width: 50, height: 50, crop: :fill , class: "participant" %>
-            </div>
-          </li>
-          <% end %>
-        </ul>
-
-        <% end %>
-
-    </div>
 
 
 
 
     <div class="col-sm-7">
+      <div class= "skills-1">
+
+          <p> Instrument <strong class= "skills"><%= @musician.instrument %></strong>
+            Level<strong class= "skills"><%= @musician.level %></strong>
+            Genre<strong class= "skills"><%= @musician.genre %></strong>
+          </p>
+      </div>
       <div class= "about">
         <h2 class="mt-4">About me:</h2>
-        <p><%= @musician.about %></p>
+        <p class="about-content" ><%= @musician.about %></p>
       </div>
-      <div class= "skills">
-        <ul>
-          <li> <%= @musician.instrument %></li>
-          <li> <%= @musician.level %></li>
-          <li> <%= @musician.genre %></li>
-        </ul>
-      </div>
+
+
       <div class= "media">
         <h4 class="mt-4">Media:</h4>
         <% if @musician.media %>
