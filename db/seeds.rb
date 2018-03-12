@@ -127,7 +127,8 @@ Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een rep
     country: "Netherlands",
     level: "Advance",
     instrument: "Drums",
-    genre: "Who killed me with her kiss. Well it goes like this the fourth the fifth. Is to get to know you better. Let the truth cut through. How that girl. At first I didn't
+    genre: "Jazz",
+    about: "Who killed me with her kiss. Well it goes like this the fourth the fifth. Is to get to know you better. Let the truth cut through. How that girl. At first I didn't
     catch your name. Features carved with colors raining all about.
     Open my eyes for the mystery of me and you. How we chased a million stars. With your timid little eyes.",
     media: "https://youtu.be/ObGlgJPCZj4"
@@ -160,11 +161,23 @@ Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een rep
     level: "Advance",
     instrument: "Guitar",
     genre: "Cucumba",
-    about: "Poop in litter box, scratch the walls purr for no reason for purrr purr littel cat, little cat purr purr but dream about hunting birds. Chirp at birds burrow
-    under covers sit in box so lick butt, so find something else more interesting. Find a way to fit in tiny box sniff other cat's butt and hang jaw half open thereafter
-    or give attitude lick the plastic bag. Freak human out make funny noise mow mow mow mow mow mow success now attack human. Woops poop hanging from butt must get rid run
-    run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now have a lot of grump in yourself because you can't
-     forget to be grumpy and not be like king grumpy cat or eat half my food and ask for more",
+    about: "Doesn't really matter to me. Any way the wind blows. There's no reason for living with a broken heart. Is this the real life?.
+     Inside my heart is breaking. I need no sympathy.",
+    media: "https://youtu.be/ObGlgJPCZj4"
+    },
+    {
+    email: "aron@me.com",
+    password: "123456",
+    first_name: "Aron",
+    last_name: "Febles",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/15037266_1420873604607496_2343180963636412242_n.jpg?oh=e19abdc618b9f96ff32319b3c4c9a31e&oe=5B07B66E",
+    remote_banner_url: "https://orig00.deviantart.net/2106/f/2012/329/0/e/untitled_drawing_by_walktheinch-d5m49xe.png",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Drums",
+    genre: "Cucumba",
+    about: "Doesn't really matter to me. Any way the wind blows. There's no reason for living with a broken heart. Is this the real life?. Inside my heart is breaking. I need no sympathy.",
     media: "https://youtu.be/ObGlgJPCZj4"
     }
 ]
