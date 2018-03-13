@@ -1,15 +1,74 @@
+
+.profile-container{
+  background-color: #0a2239;
+  color: white;
+  padding-bottom: 50px;
+
+}
+.profile-content{
+  display:flex;
+
+}
+
 .banner-profile{
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   justify-content: flex-end;
   align-items: left;
-  height: 400px
+  height: 250px;
+  background-position:0px 0px;
+  border-bottom: solid #ef4343 4px;
 }
 
 .avatar-profile{
-  background: none;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  border-radius: 50%;
+  margin-top: -100px;
+  margin-left: 50px;
+  margin-right: 30px;
+  // border-radius: 50%;
+
+  border: solid #ef4343 4px;
+  border-radius: 15px;
+
+}
+.friends-avatars{
+  border-color: white;
+}
+.photo-name{
+  display: flex;
+}
+.photo-name p {
+  margin-left: 100px;
+  margin-top: 25px;
+}
+
+.profile-info-left{
+  flex: 0 0 350px;
+  margin-left:70px;
+  margin-top: 30px;
+}
+.profile-info-right{
+  margin-right:70px;
+}
+
+.about-content{
+  background-color: white;
+  border-right: solid #ef4343 4px;
+  border-bottom: solid #ef4343 4px;
+  padding: 30px;
+  border-radius: 15px;
+  color:  #0a2239;
+
+}
+
+.skills{
+  background-color: #ef4343;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.friends-avatars {
+  display: flex;
+  padding: 5px;
 }
 
