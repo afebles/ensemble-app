@@ -2,13 +2,17 @@
 .profile-container{
   background-color: #0a2239;
   color: white;
+  padding-bottom: 50px;
+
+}
+.profile-content{
+  display:flex;
 
 }
 
-
 .banner-profile{
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   justify-content: flex-end;
   align-items: left;
   height: 300px;
@@ -26,12 +30,23 @@
   border-radius: 15px;
 
 }
+.friends-avatars{
+  border-color: white;
+}
 .photo-name{
   display: flex;
 }
 .photo-name p {
   margin-left: 100px;
   margin-top: 25px;
+}
+
+.profile-info-left{
+  flex: 0 0 350px;
+  margin-left:70px;
+}
+.profile-info-right{
+  margin-right:70px;
 }
 
 .about-content{
