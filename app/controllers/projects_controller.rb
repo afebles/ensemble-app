@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
     @participants = @project.participants
     @comments = @project.comments
     @comment = Comment.new
+
   end
 
   def new
