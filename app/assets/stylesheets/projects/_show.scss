@@ -6,5 +6,35 @@
 }
 
 .no-deco li {
-  text-decoration: none;
+  list-style-type: none;
+}
+
+.project-left {
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+
+.content-projects{
+  display: flex;
+  margin-top: -80px;
+}
+
+.project-left{
+flex: 0 0 350px;
+margin-right: 30px;
+background: white;
+
+}
+
+
+.project-right{
+flex: 0 0 60%;
+padding-top: 30px;
+padding-left: 30px;
+
+}
+
+.wrapper{
+
 }
