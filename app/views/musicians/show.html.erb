@@ -23,14 +23,20 @@
       <h4> <%= @musician.city %>, <%= @musician.country %></h4>
       <% if current_user == @musician %>
       <p>
-        <%= link_to "Edit profile  ", edit_user_registration_path(@user) %><i class="fa fa-edit"></i>
+        <%= link_to edit_user_registration_path(@user) do%>
+          <span>Edit Profile  </span><i class="fa fa-edit"></i>
+          <% end %>
 
         <br>
-        <%= link_to "Delete profile  ", user_registration_path(@user), class: "", method: :delete, data: { confirm: "Are you sure?" } %> <i class="fa fa-trash"></i>
+        <%= link_to user_registration_path(@user), class: "", method: :delete, data: { confirm: "Are you sure?" } do%>
+          <span>Delete Profile  </span><i class="fa fa-trash"></i>
+          <% end %>
       </p>
         <% end %>
 
+      <% if current_user == @musician %>
       <p><%= link_to "Create a project", new_project_path, class: "btn btn-primary btn-lg" %></p>
+      <% end %>
 
 
       <%= render 'connections/connection_button' %>
