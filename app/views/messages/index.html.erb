@@ -1,8 +1,69 @@
-<% if @over_ten %>
-<%= link_to 'Show Previous', '?m=all' %>
-<% end %>
+<div class="panel panel-default widget">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-comment"></span>
+      <h2 class="panel-title">Messages</h2>
+      <br>
+      <% if @over_ten %>
+      <%= link_to 'Show previous messages', '?m=all' %>
+      <% end %>
+  </div>
 
-<div class="ui segment">
+    <div class="panel-body">
+      <% if @messages.empty? %>
+        <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+          <div class="field">
+            <p>New message:</p>
+            <%= f.text_area :body, class: "form-control"%>
+          </div>
+            <%= f.text_field :user_id, value: current_user.id, type: "hidden"%>
+          <div class="message-btns">
+            <%= f.submit "Send", class: "btn btn-sm btn-hover btn-primary" %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% @messages.each do |message| %>
+        <% if message.body %>
+          <% user = User.find(message.user_id) %>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-xs-2 col-md-1">
+                    <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+                <div class="col-xs-10 col-md-11">
+                  <div>
+                    <div class="mic-info">
+                      By: <a <strong><%= user.first_name %></strong></a> <%= message.message_time %>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                   <span>Received message:</span>
+                   <p><%= message.body %></p>
+                    <!-- <span>Replay: <%= @conversation.messages.where("id is not null").last.body %></span> -->
+                  </div>
+
+                  <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+                    <div class="field">
+                      <%= f.text_area :body, class: "form-control"%>
+                    </div>
+                      <%= f.text_field :user_id, value: current_user.id, type: "hidden"%>
+                    <div class="message-btns">
+                      <%= f.submit "Send", class: "btn btn-sm btn-hover btn-primary" %>
+                      <%= link_to "Delete", conversation_message_path(@conversation, message), class: "btn btn-sm btn-hover btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
+                      <%= link_to "Mark as read", read_conversation_message_path(@conversation, message), class: "btn btn-sm btn-hover btn-primary "%>
+                    </div>
+                  <% end %>
+              </div>
+            </li>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+
+<!-- <div class="ui segment">
   <% @messages.each do |message| %>
     <% if message.body %>
       <% user = User.find(message.user_id) %>
@@ -22,14 +83,4 @@
       <%= link_to "message read", read_conversation_message_path(@conversation, message) %>
     <% end %>
   <% end %>
-</div>
-
-<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
-<div class="field">
-<%= f.text_area :body, class: "form-control"%>
-</div>
-<%= f.text_field :user_id, value: current_user.id, type: "hidden"%>
-<div>
-<%= f.submit "Add Reply", class: "ui blue labeled submit icon button"%>
-</div>
-<% end %>
+</div> -->
