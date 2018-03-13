@@ -13,7 +13,7 @@
         <% end %>
         <div class="item">
           <%= link_to recipient.first_name + " " + recipient.last_name, conversation_messages_path(conversation)%>
-          <%= link_to "Delete", conversation_path(conversation), class: "btn btn-primary btn-lg", method: :delete,
+          <%= link_to "Delete", conversation_path(conversation), class: "btn btn-sm btn-hover btn-primary", method: :delete,
           data: { confirm: "Are you sure you want to delete conversation?" } %>
         </div>
       <% end %>
