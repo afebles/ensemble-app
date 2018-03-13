@@ -1,80 +1,123 @@
 
-<!-- Header with Background Image -->
-<div>
-<div class="banner banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
-  <%#= @musician[:banner] %>
-  <%= cl_image_tag @musician.avatar, height: 200, width: 200,  crop: :thumb,  class: "avatar-profile" %>
-</div>
 
-</div>
+<div class="profile-container">
+
+  <div class="profile-info">
+    <div class="banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
+    </div>
+    <div class="photo-name" >
+      <%= cl_image_tag @musician.avatar, height: 200, width: 200,  crop: :thumb,  class: "avatar-profile" %>
+
+      <h2><%= @musician.first_name.capitalize %> <%= @musician.last_name.capitalize %></h2>
 
 
-
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-
-    <div class="full-name" >
-
-     <h2><%= @musician.first_name.capitalize %> <%= @musician.last_name.capitalize %></h2>
-   </div>
-
-   <div class="col-sm-4">
-    <h4> <%= @musician.city %>, <%= @musician.country %></h4>
+      <p> Instrument <strong class= "skills"><%= @musician.instrument %></strong>
+        Level<strong class= "skills"><%= @musician.level %></strong>
+        Genre<strong class= "skills"><%= @musician.genre %></strong>
+      </p>
+    </div>
   </div>
 
+  <div class="profile-content">
+    <div class=profile-info-left>
+      <h4> <%= @musician.city %>, <%= @musician.country %></h4>
+      <% if current_user == @musician %>
+      <p>
+        <%= link_to edit_user_registration_path(@user) do%>
+          <span>Edit Profile  </span><i class="fa fa-edit"></i>
+          <% end %>
 
-  <div class="col-sm-7">
-    <div class= "about">
-      <h2 class="mt-4">About me:</h2>
-      <p><%= @musician.about %></p>
+        <br>
+        <%= link_to user_registration_path(@user), class: "", method: :delete, data: { confirm: "Are you sure?" } do%>
+          <span>Delete Profile  </span><i class="fa fa-trash"></i>
+          <% end %>
+      </p>
+        <% end %>
+
+      <% if current_user == @musician %>
+      <p><%= link_to "Create a project", new_project_path, class: "btn btn-primary btn-lg" %></p>
+      <% end %>
+
+
+      <%= render 'connections/connection_button' %>
+      <div class="friends">
+        <h3>Friends</h3>
+        <div class= "friends-avatars">
+
+          <% @connections.each do |connection| %>
+          <%= link_to musician_path(connection) do  %>
+          <%= cl_image_tag connection.avatar, width: 50, height: 50, crop: :fill , class: "participant" %>
+
+          <% end %>
+          <% end %>
+        </div>
+       </div>
+     </div>
+
+
+      <div class=profile-info-right>
+
+        <div class= "about">
+          <h2 class="mt-4">About me:</h2>
+          <p class="about-content" ><%= @musician.about %></p>
+        </div>
+
+
+        <div class= "media">
+          <h4 class="mt-4">Media:</h4>
+          <% if @musician.media %>
+          <p><%= @musician.media %></p>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @musician[:media].split("/").last %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+          <% end %>
+        </div>
+
+      </div>
     </div>
-    <div class= "skills">
-      <ul>
-        <li> <%= @musician.instrument %></li>
-        <li> <%= @musician.level %></li>
-        <li> <%= @musician.genre %></li>
-      </ul>
-    </div>
-    <div class= "media">
-      <h4 class="mt-4">Media:</h4>
-      <% if @musician.media %>
-      <p><%= @musician.media %></p>
-
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @musician[:media].split("/").last %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<% end %>
-    </div>
-    <br>
-    <div>
-      <%= link_to "Create a project", new_project_path, class: "btn btn-primary btn-lg" %>
-    </div>
-    <br>
-
-
-
-
-    <!-- btn connect -->
-    <div class="conecting">
-      <% if  @musician.friends_with?(current_user) %>
-      <p>You are already connected!</p>
-      <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-      <%elsif @musician.pending_friends.include?(current_user)%>
-      <p>You are pending connection!</p>
-      <p><%= link_to "Remove connection", remove_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-      <%else%>
-      <p><%= link_to "Connect", connect_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-      <%end%>
-      <!-- btn block use only works if firends -->
-      <% if  @musician.friends_with?(current_user) %>
-      <p><%= link_to "BLOCK", block_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-      <% elsif  current_user.blocked_friends.include?(@musician) %>
-      <p><%= link_to "UNBLOCK", unblock_musician_path(@musician) , class: "btn btn-primary btn-lg" %></p>
-      <%end%>
-    </div>
-
-  </div>
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

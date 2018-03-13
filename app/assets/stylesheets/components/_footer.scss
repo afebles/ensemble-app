@@ -1,5 +1,6 @@
 .footer {
   background: #3c4858;
+  border-top: solid #ef4343;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +29,11 @@
 
 }
 
-.fab{
+.footer .fa{
   font-size: 30px;
   margin: 10px;
+}
+
+.footer-copyright{
+  color: #ef4343;
 }
