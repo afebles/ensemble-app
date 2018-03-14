@@ -3,10 +3,12 @@
   background-color: #27292e;
   color: white;
   padding-bottom: 70px;
+  color: white;
 
 }
 .profile-content{
   display:flex;
+
 
 
 }
@@ -16,7 +18,7 @@
   // flex-direction: column;
   justify-content: flex-end;
   align-items: left;
-  height: 250px;
+  height: 320px;
   background-position:0px 0px;
   // border-bottom: solid #ef4343 1px;
   background-size: cover !important;
@@ -88,6 +90,7 @@
 .photo-name p {
   margin-left: 100px;
   margin-top: 25px;
+  color: white;
 }
 
 .profile-info-left{
