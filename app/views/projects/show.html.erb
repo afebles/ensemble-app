@@ -1,7 +1,7 @@
 
 <!-- Header with Background Image -->
 <div class="wrapper">
-<div class="banner banner-project" style="background-image: linear-gradient(-225deg, rgba(239,67,67,0.6) 0%, rgba(178,12,12,0.6) 50%),url('<%= cl_image_path(@project.picture) %>')">
+<div class="banner banner-project" style="background-image: linear-gradient(-225deg, rgba(25,25,25,0.6) 0%, rgba(178,12,12,0.6) 70%),url('<%= cl_image_path(@project.picture) %>')">
 
 </div>
 
@@ -12,18 +12,18 @@
       <%= cl_image_tag @project.picture, width: 350, height: 350, crop: :fill, class: "project-picture"  %>
 
       <div class="project-content">
-       <h2 class="mt-4"><%= @project[:title] %></h2>
-       <p><%= @project[:description] %></p>
+       <h2 class="mt-4"><%= @project.title.upcase %></h2>
+       <p><%= @project.description %></p>
 
 
 
-       <h2 class="mt-4">When:</h2>
-       <ul class="no-deco">
-        <li>Starts: <%= @project.start_time %></li>
-        <li>Ends: <%= @project.end_time %></li>
-        <li>Location: <%= @project.location %></li>
+       <h2 class="mt-4">WHEN/ WHERE</h2>
+
+        <p><span class="tipo-grey">STARTS AT</span>  <%= @project.start_time.to_formatted_s(:long_ordinal) %></p>
+        <p><span class="tipo-grey">ENDS AT</span>  <%= @project.end_time.to_formatted_s(:long_ordinal) %></p>
+        <p><span class="tipo-grey">LOCATION</span>  <%= @project.location %></li>
         <!-- <li><%= cl_image_tag(@project.user.avatar) %></li> -->
-      </ul>
+      </p>
 
       <% if current_user == @project.user %>
       <p>
@@ -76,8 +76,8 @@
                </div>
 
               <div >
-                <p><%=comment.user.first_name%> <%=comment.user.last_name%></p>
-                <p>10/07/17</p>
+                <p class="tipo-grey"><%=comment.user.first_name%> <%=comment.user.last_name%></p>
+                <p class="tipo-grey"><%=comment.created_at.to_formatted_s(:short) %></p>
               </div>
             </div>
           <% end %>
