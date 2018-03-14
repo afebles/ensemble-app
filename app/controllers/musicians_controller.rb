@@ -10,10 +10,10 @@ class MusiciansController < ApplicationController
       #@instrument = Instrument.where(name: params[:skill])
 
       #@skill = Skill.where(instrument: @instrument)
-      @musicians = User.where(sql_query, location: "%#{params[:location]}%")
+      @musicians = User.where(sql_query, location: "%#{params[:location]}%").where.not(id: current_user)
       @projects = Project.where(sql_query_2, location: "%#{params[:location]}%")
     else
-      @musicians = User.all
+      @musicians = User.all.where.not(id: current_user)
       @projects = Project.all
     end
 
