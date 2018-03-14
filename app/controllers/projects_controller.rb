@@ -23,6 +23,8 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @participants = @project.participants
+    @comments = @project.comments
+    @comment = Comment.new
 
   end
 

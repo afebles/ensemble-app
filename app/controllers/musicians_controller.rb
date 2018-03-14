@@ -54,7 +54,9 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = User.find(params[:id])
+    @connections = @musician.friends
     @pending_friends = @musician.pending_friends
+
   end
 # should move to dashboard profile
 def accept
@@ -86,11 +88,11 @@ def update
   @musician = User.find(params[:id])
   if @musician.user != current_user
     flash[:alert] = "You can not edit this musician"
-    redirect_to @musician
+    # redirect_to @musician
   else
     if @musician.update(musician_params)
       flash[:alert] = "Your musician has been successfully updated"
-      redirect_to @musician
+      redirect_to @musician.user
     else
       render :edit
       render json: @musician.errors
