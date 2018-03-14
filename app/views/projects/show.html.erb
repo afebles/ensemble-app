@@ -21,6 +21,7 @@
           <p><span class="tipo-grey">ENDS AT</span>  <%= @project.end_time.to_formatted_s(:long_ordinal) %></p>
           <p><span class="tipo-grey">LOCATION</span>  <%= @project.location %></li>
           <!-- <li><%= cl_image_tag(@project.user.avatar) %></li> -->
+
       </div>
       </p>
 
@@ -32,8 +33,11 @@
         <% else %>
         <p><%= link_to "Join the project", project_participants_path(@project) , method: :post, class: "btn btn-primary btn-lg" %></p>
         <% end %>
-       </div>
 
+       </div>
+        <div class="map">
+        <%= image_tag "map_fake.jpg", width: 390, height: 390, crop: :fill%>
+        </div>
       </div>
 
       <div class="project-right">
