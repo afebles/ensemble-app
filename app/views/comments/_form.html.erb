@@ -1,6 +1,6 @@
 
 
-<%= simple_form_for [@project, @comment] do |f| %>
-    <%= f.input :content, placeholder: "What do you wanna say..." %>
+<%= simple_form_for [@project, @comment]  do |f| %>
+    <%= f.input :content, placeholder: "What are your ideas for the project?", class: "form-project" %>
     <%= f.button :submit,"Add Comment", class: "btn btn-primary"  %>
 <% end %>
