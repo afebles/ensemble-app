@@ -6,7 +6,7 @@
     <div class="banner-profile" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@musician.banner) %>');">
     </div>
     <div class="photo-name" >
-      <%= cl_image_tag @musician.avatar, height: 200, width: 200,  crop: :thumb,  class: "avatar-profile" %>
+      <%= cl_image_tag @musician.avatar, height: 295, width: 230,  crop: :thumb,  class: "avatar-profile" %>
 
       <h2><%= @musician.first_name.capitalize %> <%= @musician.last_name.capitalize %></h2>
 
@@ -55,17 +55,18 @@
      </div>
 
 
-      <div class=profile-info-right>
+      <div class="profile-info-right">
 
         <div class= "about">
-          <h2 class="mt-4">About me:</h2>
+          <h3 class="mt-4">About me:</h3>
           <p class="about-content" ><%= @musician.about %></p>
         </div>
 
 
         <div class= "media">
-          <h4 class="mt-4">Media:</h4>
           <% if @musician.media %>
+          <!-- <h4 class="mt-4">Media:</h4> -->
+
           <p><%= @musician.media %></p>
 
           <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @musician[:media].split("/").last %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -73,9 +74,24 @@
           <% end %>
         </div>
 
+        <div class="profile-social">
+          <div class="social">
+            <a href="#"><i class="fa fa-facebook-f"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+                    <!-- <li><a href="https://www.linkedin.com/" target="_blank"><i class="rsicon rsicon-linkedin"></i></a></li>
+                    <li><a href="https://instagram.com/" target="_blank"><i class="rsicon rsicon-instagram"></i></a></li>
+                    <li><a href="https://plus.google.com/" target="_blank"><i class="rsicon rsicon-google-plus"></i></a></li> -->
+          </div>
+        </div>
+
+
       </div>
+
     </div>
 </div>
+
+
 
 
 
