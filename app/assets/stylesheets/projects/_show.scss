@@ -42,20 +42,30 @@
 .project-left{
 flex: 0 0 350px;
 margin-right: 30px;
-background: white;
-padding:20px;
 color: #35363b;
 // border: solid #ef4343 2px;
 // border-radius: 15px;
+
+}
+
+.project-background {
+  background: white;
+padding:20px;
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 }
 
+.comment-form-container {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .project-right{
 flex: 1 0 650px;
 padding-top: 330px;
 padding-left: 30px;
+margin-bottom:70px;
 
 }
 
