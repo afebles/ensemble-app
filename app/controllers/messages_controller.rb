@@ -39,8 +39,13 @@ class MessagesController < ApplicationController
     end
   end
 
-  def mark_read
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    redirect_back(fallback_location: root_path)
+  end
 
+  def mark_read
     @message = Message.find(params[:id])
     @message.read = true
     @message.save!
