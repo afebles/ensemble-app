@@ -1,3 +1,20 @@
+<!-- old serchbar -->
+
+<%#= form_tag musicians_path, method: :get, class: "form-inline" do%>
+  <%#= text_field_tag :skill,
+    params[:query],
+    class: "form-control form-control-lg",
+      placeholder: "What? ex: Drummer, Project..."
+      %>
+  <%#= text_field_tag :location,
+    params[:query],
+    class: "form-control search",
+      placeholder: "Ex: Amsterdam"
+      %>
+  <%#= submit_tag "Find", class: "btn btn-primary" %>
+<%# end %>
+
+<!-- new serchbar (davis) -->
 <div id="custom-search-input">
   <form class="form-inline" action="/musicians" accept-charset="UTF-8" method="get">
     <div class="search-bar">
@@ -8,4 +25,5 @@
     </div>
   </form>
 </div>
+
 
