@@ -1,0 +1,17 @@
+.comment{
+  display:flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.comment-content{
+text-align: left;
+flex: 0 0 60%;
+}
+
+.comment-avatar{
+border-radius: 50%;
+}

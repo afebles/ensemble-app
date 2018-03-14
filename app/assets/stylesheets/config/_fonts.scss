@@ -1,12 +1,25 @@
 // Import Google fonts
+
+// Last version font:
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+
+// To put in css code:
+// font-family: 'Open Sans', sans-serif;
+
+
+
+
+// The one before:
+
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 // Define fonts for body and headers
 $body-font: "Rajdhani", "sans-serif";
 $headers-font: "Rajdhani", "sans-serif";
 
-h2 {
-   font-weight: bold !important;
-}
+// h2 {
+//    font-weight: bold !important;
+// }
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
