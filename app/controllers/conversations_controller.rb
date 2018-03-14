@@ -4,6 +4,8 @@ class ConversationsController < ApplicationController
   def index
    @users = User.all
    @conversations = Conversation.all
+   @conversation = Conversation.last
+   @message = Message.new
   end
 
   def show
@@ -25,6 +27,7 @@ class ConversationsController < ApplicationController
     @conversation.destroy
     redirect_back(fallback_location: root_path)
   end
+
 
   private
 
