@@ -16,17 +16,18 @@
   <div class="card-musician">
     <% @musicians.each do |musician| %>
       <div class="col-xs-12 col-sm-4 card-box">
-        <div id="ccc" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(musician.avatar)%>');">
+        <%= link_to musician_path(musician), class: "card-link" do %>
 
-          <%#= cl_image_tag ...photo, class: "card-user" %>
-          <%= link_to "", musician_path(musician), class: "card-link" %>
+        <div id="ccc" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(musician.avatar)%>');">
         </div>
+        <% end %>
+
         <div class="card-description">
           <h2 class="description"><%= musician.first_name + " " + musician.last_name %></h2>
           <p class="instrument-card"><%= musician.instrument.upcase %></p>
         </div>
       </div>
-    <% end %>
+<% end %>
   </div>
 </div>
 

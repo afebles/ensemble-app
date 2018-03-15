@@ -9,17 +9,15 @@
 <div class="container card-container">
   <div class="row">
     <% @projects.each do |project| %>
-      <div class="col-xs-10 col-sm-4 card-box">
+      <div class="col-xs-10 col-sm-4 card-box card-box-project">
+        <%= link_to project_path(project), class: "card-link" do%>
         <div id="ccc" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(project.picture)%>');">
 
-          <div class="card-description">
-            <h2><%= project.title.capitalize %></h2>
-            <p><%= project.location %></p>
-          </div>
-          <img class="card-user" src="">
-          <%#= cl_image_tag @project.user.avatar, width: 100, height: 100, crop: :fill , class:"card-user"%>
-
-          <%= link_to "", project_path(project), class: "card-link" %>
+        </div>
+        <% end %>
+        <div class="card-description">
+            <h2 class="description"><%= project.title.capitalize %></h2>
+            <p class="instrument-card"><%= project.location.upcase %></p>
         </div>
       </div>
     <% end %>
