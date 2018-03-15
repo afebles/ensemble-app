@@ -25,7 +25,9 @@
 
       <%= link_to connections_path, class: "navbar-wagon-item navbar-wagon-link"  do%>
         <i class="fa fa-users"></i>
+        <% if current_user.pending_friends.length > 0 %>
           <span><%= current_user.pending_friends.length %></span>
+          <% end%>
         <% end %>
 
       <%= link_to conversations_path, class: "navbar-wagon-item navbar-wagon-link"  do%>
