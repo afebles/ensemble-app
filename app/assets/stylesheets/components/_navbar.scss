@@ -31,7 +31,9 @@
   align-items: center;
   justify-content: space-between;
 }
-
+// .navbar-wagon-right a{
+//   color:green;
+// }
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
@@ -42,7 +44,35 @@
 .navbar-wagon-link {
   color: #d3d0cb;
   font-size: 14px;
+  // .fa{
+  //   position: relative;
+  // }
 }
+
+    // gaby position of span in navbar-----------------------------
+    //a: position: relative;
+
+    //   span: {
+    // position: absolute;
+    // top: -5px;
+    // right: 18px;
+    // font-size: 0.8em;
+    // color: #bcbcbc;
+    // font-weight: bold;
+
+
+
+
+.navbar-wagon-link span{
+
+//   position: absolute;
+//   top: -5px;
+//   right: 18px;
+  font-size: 0.8em;
+  color: #ef4343;
+  font-weight: bold;
+}
+
 .navbar-wagon-link:hover {
   color: #ef4343;
   text-decoration: none;

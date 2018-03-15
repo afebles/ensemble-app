@@ -117,3 +117,30 @@
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
+
+
+// ------------------------
+.container-cards{
+padding: 70px;
+}
+.content-cards{
+
+
+}
+.musician-cards{
+  // margin-bottom:100px;
+  background-color:green;
+  padding: 50px 10px;
+  margin-bottom: 50px;
+  h1{
+    margin-bottom: 50px;
+  }
+
+}
+.projects-cards{
+  background-color:red;
+  padding: 50px 10px;
+  h1{
+    margin-bottom: 50px;
+  }
+}
