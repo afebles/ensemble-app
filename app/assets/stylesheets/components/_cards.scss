@@ -1,16 +1,6 @@
 .card-container{
   padding-left: 100px;
 }
-.zoom:hover,
-.zoom.hover {
-  -webkit-transform: scale(1.01) ;
-  transform: scale(1.01);
-}
-
-
-
-
-
 
 .container-cards{
 padding: 70px;
@@ -53,6 +43,12 @@ background-color: #b2a8a7;
   color:#877f7e;
 }
 
+
+.zoom:hover,
+.zoom.hover {
+  -webkit-transform: scale(1.01) ;
+  transform: scale(1.01);
+}
 
 // hover js minipreview ------------------------
 // .card-link {

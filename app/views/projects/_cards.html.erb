@@ -9,7 +9,7 @@
 <div class="container card-container">
   <div class="row">
     <% @projects.each do |project| %>
-      <div class="col-xs-12 col-sm-4 card-box card-box-project">
+      <div class="col-xs-12 col-sm-4 card-box card-box-project zoom">
         <%= link_to project_path(project), class: "card-link" do%>
         <div id="ccc" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(project.picture)%>');">
 
