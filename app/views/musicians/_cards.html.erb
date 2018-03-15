@@ -15,7 +15,7 @@
 <div class="container card-container">
   <div class="card-musician">
     <% @musicians.each do |musician| %>
-      <div class="col-xs-12 col-sm-4 card-box">
+      <div class="col-xs-12 col-sm-4 card-box zoom">
         <%= link_to musician_path(musician), class: "card-link" do %>
 
         <div id="ccc" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(musician.avatar)%>');">
