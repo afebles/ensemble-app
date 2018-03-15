@@ -1,7 +1,7 @@
 
 <%= simple_form_for(@project) do |f| %>
-    <%= f.input :title, placeholder: "What project you want to create" %>
-    <%= f.input :description, placeholder: "Add a description of your project", as: :text %>
+    <%= f.input :title, placeholder: "What is your project about?" %>
+    <%= f.input :description, placeholder: "Add a description to your project...", as: :text %>
     <%= f.input :start_time, placeholder: "Start Time" %>
     <%= f.input :end_time, placeholder: "End Time" %>
     <%= f.input :location, placeholder: "Where?" %>
@@ -10,6 +10,7 @@
 
     <%= f.button :submit, class: "btn btn-primary"  %>
 <% end %>
+
 
 
 

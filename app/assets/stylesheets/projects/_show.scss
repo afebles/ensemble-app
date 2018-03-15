@@ -1,4 +1,10 @@
-
+.tipo-project{
+padding-top:0px;
+color: #877f7e;
+font-size: 20px;
+padding-bottom: 15px;
+font-family: "Rajdhani", "sans-serif";
+}
 
 .participant {
   // border-radius: 50%;
@@ -6,6 +12,12 @@
   margin-right: 10px;
   margin-bottom: 10px;
   // background: transparent;
+}
+
+.avatar_connection{
+  border: solid #ef4343 2px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .banner-project{
@@ -43,13 +55,14 @@
 flex: 0 0 350px;
 margin-right: 30px;
 color: #35363b;
+
 // border: solid #ef4343 2px;
 // border-radius: 15px;
 
 }
 
 .project-background {
-background: white;
+background-color: rgb(236, 236, 236);
 padding:20px;
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
