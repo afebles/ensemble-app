@@ -27,17 +27,19 @@
 
       <% if current_user == @project.user %>
       <p>
-        <%= link_to "Edit", edit_project_path(@project), class: "btn btn-primary btn-lg" %>
+        <%= link_to edit_project_path(@project) do%>
+          <span>Edit Project  </span><i class="fa fa-edit"></i>
+          <% end %>
 
-
-
-
-
-
-
-        <%= link_to "Delete", project_path(@project), class: "btn btn-primary btn-lg", method: :delete,
-        data: { confirm: "Are you sure?" } %></p>
+        <br>
+        <%= link_to project_path(@project), method: :delete, data: { confirm: "Are you sure?" } do%>
+          <span>Delete Project  </span><i class="fa fa-trash"></i>
+          <% end %>
         <% else %>
+
+
+
+
         <p><%= link_to "Join the project", project_participants_path(@project) , method: :post, class: "btn btn-primary btn-lg" %></p>
         <% end %>
 
