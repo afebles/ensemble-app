@@ -1,7 +1,9 @@
 
 
-
+Comment.destroy_all
 User.destroy_all
+Project.destroy_all
+
 
 
 users = [
@@ -11,14 +13,13 @@ users = [
     first_name: "Christel",
     last_name: "Heijmans",
     remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/14317373_1118333798261574_7280857368832622381_n.jpg?oh=a4746fbb0c2882f65c34fce25528f5a1&oe=5B0B459D",
-    remote_banner_url: "https://unsplash.com/photos/LhWr3yGGC6k",
+    remote_banner_url: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=2250&q=80",
     city: "Amsterdam",
     country: "Netherlands",
     level: "Advance",
     instrument: "Voice",
     genre: "Jazz/Soul",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    about: "I am a songwriter based in Amsterdam. I love writing songs as a way of expressing my feelings and the thoughts of people who inspire me. I write different genres of songs such as pop,rnb,soul and rock. I'm always taking inspiration from music that I love so I like to keep my writing style open , it makes my writing/songs more authentic.",
     media: "https://youtu.be/ObGlgJPCZj4"
     },
     {
@@ -26,111 +27,104 @@ Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een rep
     password: "123456",
     first_name: "Kim",
     last_name: "Vera",
-    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/10500419_10204198754355164_4259443441310520678_n.jpg?oh=0d248165e00452fdce86b74c00f238d0&oe=5B0B3393",
-    remote_banner_url: "https://previews.123rf.com/images/belchonock/belchonock1509/belchonock150902686/45177248-musical-instruments-on-turquoise-wallpaper-background.jpg",
-    city: "Diemen",
-    country: "Netherlands",
-    level: "Advance",
-    instrument: "Guitar",
-    genre: "Rumba",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
-    media: "https://youtu.be/ObGlgJPCZj4"
-    },
-    {
-    email: "jimi@me.com",
-    password: "123456",
-    first_name: "Jimi",
-    last_name: "Yolo",
-    remote_avatar_url: "https://img-s3.onedio.com/id-57725837d9c145dc39c50719/rev-0/raw/s-dc55c5df4464d8e776d3551354bf9f1d9005dbd6.jpg",
-    remote_banner_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/988611_10201566031098728_751955673_n.jpg?oh=f6f80f47c882d91fd2a9d05a1138cc43&oe=5B38A8BD",
-    city: "Diemen",
-    country: "Netherlands",
-    level: "Advance",
-    instrument: "Drums",
-    genre: "Rock",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
-    media: "https://youtu.be/ObGlgJPCZj4"
-    },
-    {
-    email: "lee@me.com",
-    password: "123456",
-    first_name: "Lee",
-    last_name: "Wiss",
-    remote_avatar_url: "https://s.hdnux.com/photos/63/04/30/13387264/3/920x920.jpg",
-    remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3VmxVT7_7YIITVRXaZPVzib73eb1xIvXR2o8yYwjqOKnRO5i0",
-    city: "Diemen",
-    country: "Netherlands",
-    level: "Advance",
-    instrument: "Trumpet",
-    genre: "Jazz",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
-    media: "https://youtu.be/ObGlgJPCZj4"
-    },
-    {
-    email: "willy@me.com",
-    password: "123456",
-    first_name: "Willy",
-    last_name: "Free",
-    remote_avatar_url: "https://qph.fs.quoracdn.net/main-qimg-4c62a423e253ac05456ffb84822760f2-c",
-    remote_banner_url: "https://pre00.deviantart.net/90f9/th/pre/f/2017/018/0/f/random_background_4_by_9xrenex9-davutvj.png",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/15578497_10211495685493882_8712048160046255154_n.jpg?oh=89b926dfad05b5ae9058b6f740a26361&oe=5AFF94A7",
+    remote_banner_url: "https://images.unsplash.com/photo-1444623151656-030273ddb785?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=10ba9e2bb83ba7040f28251ab9731e07&auto=format&fit=crop&w=1650&q=80",
     city: "Amsterdam",
     country: "Netherlands",
     level: "Advance",
     instrument: "Guitar",
-    genre: "Blues",
-    about: "Curiosity caused me pain. T'was the dawn creation of the underworld. All I know is that I gotta keep her in my arms. Hallelujah, Hallelujah, Hallelujah, Hallelujah. That's where I first saw the girl. I don't know. There she goes. Well I heard there was a secret chord. The dawning of the underworld.. ",
-    media: "https://youtu.be/ObGlgJPCZj4"
+    genre: "Rumba",
+    about: "Songwriter based in Amsterdam up for collaborations. I take my songwriting very seriously and can write in multiple styles for many genres but catalan rumba it is my favourite. Check out the examples I have uploaded of my previous work.",
+    media: "https://www.youtube.com/watch?v=XNEtBo7RSxQ"
     },
     {
-    email: "corey@me.com",
+    email: "aysha@me.com",
     password: "123456",
-    first_name: "Corey",
-    last_name: "Appel",
-    remote_avatar_url: "http://gaia.adage.com/images/bin/image/jumbo/IvanCashBioPic.jpeg",
-    remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Sjx8CQLEpivQY_-oV9cpek60anPTttHaeRlZ-D_QSTYT9yz9zA",
+    first_name: "Aysha",
+    last_name: "De Groot",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/22181178_10208397286083548_8746333542426674364_o.jpg?oh=ccddc23502568726999b57487827f2ce&oe=5B38229E",
+    remote_banner_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/22254703_10208397285483533_4564635857569049176_o.jpg?oh=4a691846a80cf5a4927a9998aeab0e81&oe=5B48B656",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Voice",
+    genre: "Rock",
+    about: "Hey all! I am an independent artist working from Amsterdam. I work in composing musical scores and writing my own style music. I play piano, acoustic guitar, electric guitar, bass guitar, synthesizer and a vocalist. Thanks for reading, and don't be afraid to critique and message me!!",
+    media: "https://www.youtube.com/watch?v=a_xmkCpVu2Y"
+    },
+    {
+    email: "daniel@me.com",
+    password: "123456",
+    first_name: "Daniel",
+    last_name: "Hoogerwerf",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/1426495_286186828173267_472867283_n.jpg?oh=d6f33e07604481174053cd6a7b860e8a&oe=5B3C4060",
+    remote_banner_url: "https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f4744c6b82bed131593900e0b7a316f&auto=format&fit=crop&w=1500&q=80",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Master",
+    instrument: "DJ",
+    genre: "Drum and bass",
+    about: "I am a DJ & producer. I love making music, and producing. The tunes on my sound cloud link were made at home. It is amazing what you can do with computers these days. I love all types of music, and have made many songs in different genres. I like also do ambient instrumentals, and have had some of my film scores in independent films. I want to make music which has a unique spin on it, and looks towards the future using brand new technology.",
+    media: "https://www.youtube.com/watch?v=TIGi8m2ST6E"
+    },
+    {
+    email: "marcel@me.com",
+    password: "123456",
+    first_name: "Marcel",
+    last_name: "De Groot",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/823367_10201818089630961_1304615097_o.jpg?oh=af7f2357d4b2dafc4998a23fe95942cc&oe=5B39902D",
+    remote_banner_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/12963852_10208606007644669_5929580650303235105_n.jpg?oh=c31af63e091a783f5fc69cf3360c444c&oe=5B49E3F2",
+    city: "Amsterdam",
+    country: "Netherlands",
+    level: "Advance",
+    instrument: "Guitar",
+    genre: "Country",
+    about: "Marcel de Groot, playing guitar from the age of 10, starts his career as a radio promoter with several record companies. And however interesting it is to experience the music industry from the inside, the blood creeps and goes its own way, straight to the music.",
+    media: "https://www.youtube.com/watch?v=LteWK4nc8-8"
+    },
+    {
+    email: "davis@me.com",
+    password: "123456",
+    first_name: "Davis",
+    last_name: "Lazdins",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/277926_475599525786226_527154238_o.jpg?oh=6314fc77b3804782250cea587a2a7ef3&oe=5B408F7A",
+    remote_banner_url: "https://images.unsplash.com/photo-1462813277085-db5366eb347b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce0bdae61302f1757f799042a0769e2e&auto=format&fit=crop&w=1500&q=80",
     city: "Amsterdam",
     country: "Netherlands",
     level: "Advance",
     instrument: "Piano",
     genre: "Blues",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    about: "Hey all! I am an independent artist working from Amsterdam. I work in composing musical scores and writing my own style music. I play piano, acoustic guitar, electric guitar, bass guitar, synthesizer and a vocalist. Thanks for reading, and don't be afraid to critique and message me!!",
     media: "https://youtu.be/ObGlgJPCZj4"
     },
     {
-    email: "luis@me.com",
+    email: "almu@me.com",
     password: "123456",
-    first_name: "Luis",
-    last_name: "Clark",
-    remote_avatar_url: "https://pbs.twimg.com/media/BcINeMVCIAABeWd.jpg",
-    remote_banner_url: "https://static3.scirra.net/images/newstore/products/2067/Screenshot-2.png",
+    first_name: "Almu",
+    last_name: "Vera",
+    remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/22310154_10214843123861334_1480897199619719968_n.jpg?oh=870daffea7b8b763dd71ccad47b28af1&oe=5B403739",
+    remote_banner_url: "https://images.unsplash.com/photo-1475744214834-0cb9be6eb226?ixlib=rb-0.3.5&s=e880a52ea47e52eca9df280854f04606&auto=format&fit=crop&w=1500&q=80",
     city: "Amsterdam",
     country: "Netherlands",
     level: "Advance",
-    instrument: "Percusion",
-    genre: "Rumba",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
-    media: "https://youtu.be/ObGlgJPCZj4"
+    instrument: "Accordion",
+    genre: "Polka",
+    about: "I am a charismatic, spontaneous and direct Polka artist who has set out to create music with a unique attitude, an emotional feel and an upbeat twist.",
+    media: "https://www.youtube.com/watch?v=Ozw1Y_K8LzQ"
     },
     {
-    email: "amy@me.com",
+    email: "cristina@me.com",
     password: "123456",
-    first_name: "Amy",
-    last_name: "Fullhouse",
+    first_name: "Cristina",
+    last_name: "Miranda",
     remote_avatar_url: "http://theludicrous.info/wp-content/uploads/2015/10/Illustrator.jpg",
     remote_banner_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyEpf7W2vR-4XseXxEdpKQX0Ly_6XVA2t_HeBaYSOUS2Ju5QQzcw",
     city: "Amsterdam",
     country: "Netherlands",
     level: "Advance",
-    instrument: "Drums",
-    genre: "Jazz",
-    about: "Who killed me with her kiss. Well it goes like this the fourth the fifth. Is to get to know you better. Let the truth cut through. How that girl. At first I didn't
-    catch your name. Features carved with colors raining all about.
-    Open my eyes for the mystery of me and you. How we chased a million stars. With your timid little eyes.",
+    instrument: "Percusion",
+    genre: "Latin",
+    about: "Hey all! I am an independent artist working from Amsterdam. I work in composing musical scores and writing my own style music. I play piano, acoustic guitar, electric guitar, bass guitar, synthesizer and a vocalist. Thanks for reading, and don't be afraid to critique and message me!!",
     media: "https://youtu.be/ObGlgJPCZj4"
     },
     {
@@ -145,8 +139,7 @@ Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een rep
     level: "Advance",
     instrument: "Flute",
     genre: "Beatbox",
-    about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
-    Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+    about: "Hey all! I am an independent artist working from Amsterdam. I work in composing musical scores and writing my own style music. I play piano, acoustic guitar, electric guitar, bass guitar, synthesizer and a vocalist. Thanks for reading, and don't be afraid to critique and message me!!",
     media: "https://youtu.be/ObGlgJPCZj4"
     },
     {
@@ -177,12 +170,38 @@ Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een rep
     level: "Advance",
     instrument: "Drums",
     genre: "Cucumba",
-    about: "Doesn't really matter to me. Any way the wind blows. There's no reason for living with a broken heart. Is this the real life?. Inside my heart is breaking. I need no sympathy.",
+    about: "I'm working as a session/freelance drummer doing both remote sessions from my own studio studio as well as doing live gigs and recording sessions wherever I'm needed. My sound could be described as groove oriented with a good pocket.",
     media: "https://youtu.be/ObGlgJPCZj4"
     }
 ]
 
 users.each { |user| User.create(user) }
+
+
+# projects = [
+#   {
+#     email: "christel@me.com",
+#     password: "123456",
+#     first_name: "Christel",
+#     last_name: "Heijmans",
+#     remote_avatar_url: "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/14317373_1118333798261574_7280857368832622381_n.jpg?oh=a4746fbb0c2882f65c34fce25528f5a1&oe=5B0B459D",
+#     remote_banner_url: "https://unsplash.com/photos/Gi6-m_t_W-E",
+#     city: "Amsterdam",
+#     country: "Netherlands",
+#     level: "Advance",
+#     instrument: "Voice",
+#     genre: "Jazz/Soul",
+#     about: "Raoul Michel begon ooit als gitarist, maar uiteindelijk nam de drang om eigen liedjes te schrijven de overhand en raakte hij verslaafd aan songwriting.
+# Met voorbeelden als Damien Rice, John Mayer en Jimi Hendrix, heeft Raoul een repertoire opgebouwd, waarin hij zich uitleeft op de gitaar en zingt vanuit z’n hart.",
+#     media: "https://youtu.be/ObGlgJPCZj4"
+#     }
+#     ]
+
+#     projects.each { |project| Project.create(project) }
+
+
+
+print "Your seed have been created"
 
 # user.remote_avatar_url = Faker::Avatar.image("my-own-slug", "50x50")
 #   user.remote_banner_url = Faker::Avatar.image("my-own-slug", "50x50")
