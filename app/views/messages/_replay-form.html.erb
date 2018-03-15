@@ -1,0 +1,25 @@
+<% if @conversation %>
+  <div class="panel panel-default widget good">
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-comment"></span>
+        <span><h2 class="panel-title">Message</h2></span>
+      </div>
+      <div class="panel-body">
+
+
+    <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+      <div class="field">
+        <%= f.text_area :body, class: "form-control"%>
+      </div>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden"%>
+      <div class="message-btns">
+        <%= f.submit "Send", class: "btn btn-sm btn-hover btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="panel panel-default widget good">
+    No conversation yet!
+  </div>
+<% end %>
