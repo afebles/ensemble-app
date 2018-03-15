@@ -1,6 +1,6 @@
 <div class="row comment-form-container">
   <%= simple_form_for [@project, @comment] do |f| %>
-      <%= f.input :content, placeholder: "What are your ideas for the project?", label: false, input_html: { class: "form-project" } %>
+      <%= f.input :content, placeholder: "Share your ideas...", label: false, input_html: { class: "form-project" } %>
       <%= f.button :submit,"Add Comment", class: "btn btn-primary pull-right"  %>
   <% end %>
 </div>
